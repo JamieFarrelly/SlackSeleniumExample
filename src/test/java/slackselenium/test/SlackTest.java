@@ -1,37 +1,29 @@
 package slackselenium.test;
-import java.util.Arrays;
-import java.util.List;
-
 import org.junit.Test;
 
 import slackselenium.Constants;
 import slackselenium.pages.ChannelPage;
 import slackselenium.pages.LoginPage;
 
-public class SlackWordOfTheDayTest extends BaseTest {
+public class SlackTest extends BaseTest {
 
-    /*
-     * TODO
-     */
     @Test
-    public void sendMessage() throws InterruptedException {
+    public void sendMessage() {
+        
         driver.get(Constants.SLACK_CHANNEL_URL);
 
         // 1. Login
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.enterEmail("test@yahoo.co.uk");
-        loginPage.enterPassword("1");
+        loginPage.enterEmail("yourEmail@gmail.com");
+        loginPage.enterPassword("YourPassword");
 
         ChannelPage channelPage = loginPage.clickLoginButton();
-
-        Thread.sleep(2000L);
 
         // 2. Click on channel you want
         channelPage.clickChannel();
 
-        // 3. Send messages
-        channelPage.sendMessage(".");
-
+        // 3. Send message
+        channelPage.sendMessage("Hello there, this is the message that I want to send");
     }
 }

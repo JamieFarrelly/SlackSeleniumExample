@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ChannelPage extends PageObject {
     
@@ -15,6 +16,8 @@ public class ChannelPage extends PageObject {
     
     public ChannelPage(WebDriver driver) {
         super(driver);
+        wait.until(ExpectedConditions.elementToBeClickable(messageInput));
+        wait.until(ExpectedConditions.elementToBeClickable(channelLink));
     }
     
     public void sendMessage(String message) {
