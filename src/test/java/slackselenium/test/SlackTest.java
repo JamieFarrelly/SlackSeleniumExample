@@ -25,5 +25,7 @@ public class SlackTest extends BaseTest {
 
         // 3. Send message
         channelPage.sendMessage("Hello there, this is the message that I want to send");
+        
+        // 4. TODO: Check that the message was sent to the channel (I intentionally left this out so that you can practice automating flows!)
     }
 }
